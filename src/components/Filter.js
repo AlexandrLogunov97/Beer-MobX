@@ -10,9 +10,10 @@ export class Filter extends React.Component {
     }
     render() {
         let store = this.props.beersStore;
+        let title=store.filterState?'Hide filter':'Show filter';
         return (
             <React.Fragment>
-                <Button color="primary" onClick={()=>store.changeFilterState()} style={{ marginBottom: '1rem', width: '100%', borderRadius: '0px' }}>Filter values</Button>
+                <Button color="primary" onClick={()=>store.changeFilterState()} style={{ marginBottom: '1rem', width: '100%', borderRadius: '0px' }}>{title}</Button>
                 <Collapse isOpen={store.filterState}>
                     <Card>
                         <CardBody>
